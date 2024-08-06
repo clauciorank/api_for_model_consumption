@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: postgres
+    container_name: my-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d
+    networks:
+      - my-network
+
+  python-api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: my-python-api
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST: ${HOST}
+    ports:
+      - "8080:8080"
+    volumes:
+      - python-models:/api/models
+    depends_on:
+      - postgres
+    networks:
+      - my-network
+
+volumes:
+  postgres-data:
+  python-models:
+
+networks:
+    my-network:
