@@ -1,8 +1,9 @@
-This repository stores an example to use docker-compose to up an API capable of return predictions and save the used parameters and the prediction inside a postgres database.
+This repository contains an example of using Docker Compose to deploy an API capable of returning predictions and saving the used parameters and predictions inside a PostgreSQL database.
 
-THE .ENV CONTAINS SENSITIVE INFORMATION IT'S ONLY MAINTAINED HERE FOR DIDATIC PURPOSES
+Note: The .env file contains sensitive information and is included here for didactic purposes only.
 
-The following examples make a request to consume a Random Forest Model trained in the Iris dataset
+The following examples demonstrate how to make a request to consume a Random Forest model trained on the Iris dataset:
+
 
 ## CURL
 ```
@@ -38,4 +39,4 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 ```
 
-To use another SKLearn model it's only necessary to upload it inside the models folder and change model_version parameter to match the .pkl file name and of course change the body values to match the column names of the trained model (It is important to train the model with a dataframe and not with a np.array)
+To use another SKLearn model, simply upload it to the models folder and change the model_version parameter to match the .pkl file name. Additionally, update the body values to match the column names of the trained model. (It is important to train the model with a DataFrame and not with an np.array.)
