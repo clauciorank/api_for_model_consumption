@@ -2,6 +2,13 @@ This repository contains an example of using Docker Compose to deploy an API cap
 
 Note: The .env file contains sensitive information and is included here for didactic purposes only.
 
+For more details:
+
+- [MODEL TRAINING](docs/model_training_doc.md)
+- [API](docs/api_doc.md)
+- [DOCKER FILES](docs/docker_doc.md)
+- [POSTGRES SETUP](docs/postgres_doc.md)
+
 The following examples demonstrate how to make a request to consume a Random Forest model trained on the Iris dataset:
 
 
