@@ -10,6 +10,12 @@ For more details:
 
 The following examples demonstrate how to make a request to consume a Random Forest model trained on the Iris dataset:
 
+## Run the docker-compose file
+
+```
+docker-compose up
+```
+
 
 ## CURL
 ```
