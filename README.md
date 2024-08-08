@@ -4,10 +4,9 @@ Note: The .env file contains sensitive information and is included here for dida
 
 For more details:
 
-- [MODEL TRAINING](docs/model_training_doc.md)
+- [Model Training](docs/model_training_doc.md)
 - [API](docs/api_doc.md)
-- [DOCKER FILES](docs/docker_doc.md)
-- [POSTGRES SETUP](docs/postgres_doc.md)
+- [Docker Structure and Postgres Setup](docs/docker_and_postgres.md)
 
 The following examples demonstrate how to make a request to consume a Random Forest model trained on the Iris dataset:
 
